@@ -1,16 +1,15 @@
-README
-======
-- Welcome to SALSA v0.7
-- Please read Documentation.pdf for installation and usage.
-- Feel free to contact the authors. Authors details can be found in the documentation.
+For running the code it is necessary to install:
 
-CHANGE LOG
-==========
-v0.7 (2014-06-24)
------------------
-- First release
+1) SciPy
+2) SpiceyPy
+3) Matplotlib
+4) Numpy
 
-REMARKS / TO-DO
-===============
-- The files 7*.py and 8*.py will undergo profound revision in later version, but _should_ work if tweaked correctly.
-- The Fortran code will undergo profound revision in later version.
+It was developed using Python 3.11.14 with the following packages versions:
+
+Package         Version
+--------------- -----------
+matplotlib      3.10.7
+numpy           2.3.5
+scipy           1.16.3
+spiceypy        8.0.0
