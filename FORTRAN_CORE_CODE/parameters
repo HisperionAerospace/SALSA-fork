@@ -7,7 +7,7 @@ c DETECTOR ---------------------------------------------------------------------
 	parameter (pixel = 1.7d-6) ! Size of one pixel in cm2 
 
       double precision SL_exclusion_angle
-      parameter(SL_exclusion_angle = 35) ! Minimum angle from the LOS to the Earth (To check the raw sky maps, see routines.f, subroutine PHOTONS_AT_TELESCOPE)
+      parameter(SL_exclusion_angle = 0) ! Minimum angle from the LOS to the Earth (To check the raw sky maps, see routines.f, subroutine PHOTONS_AT_TELESCOPE)
 
 c PST --------------------------------------------------------------------------
 
