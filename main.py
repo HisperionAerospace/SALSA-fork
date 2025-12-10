@@ -40,7 +40,7 @@ for i in range(len(sat.times)):
         indices = np.array([IndexMap[(x, y)] for x, y in zip(data[:,0], data[:,1])])
         SolutionMatrix[i, indices] = data[:,2]
     if (i) % 10 == 0 or i == len(sat.times)-1:
-        print("Completed time index %d / %d" % (i+1, len(sat.times)))
+        print("Completed time index %d / %d" % (i, len(sat.times)))
 
 np.save("OUTPUT/SolutionMatrix.npy", SolutionMatrix)
 np.save("OUTPUT/IndexMap.npy", IndexMap)

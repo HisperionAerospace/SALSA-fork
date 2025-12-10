@@ -8,10 +8,10 @@ sat = np.load("OUTPUT/sat.npy", allow_pickle=True).item()
 RA_VEC = sat.ra_targets[0]  # Example RA in radians
 DEC_VEC = sat.dec_targets[0]  # Example DEC in radians
 plot_points = SolutionMatrix[:, IndexMap[(RA_VEC, DEC_VEC)]]
-i = 0;
+i = 0
 for point in plot_points:
-    i = i+1
     print("%3.1f %.16f" % (i,point))
+    i=i+1
 
 import matplotlib.pyplot as plt
 plt.plot(sat.times/60.0, plot_points)

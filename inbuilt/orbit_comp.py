@@ -71,7 +71,7 @@ def gen_visibleFile(sat, filename, options):
 def gen_PST():
     tht = np.linspace(0,np.pi/2,100)
     pst = np.cos(tht)**2
-    table = np.column_stack((tht, pst))
+    table = np.column_stack((tht*180/np.pi, pst))
     np.savetxt("DATA/pst.dat", table, fmt='%.16e', delimiter=' ')
     return 0
 
