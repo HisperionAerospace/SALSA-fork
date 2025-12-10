@@ -8,7 +8,7 @@ import subprocess
 # Settings
 initial_state = np.array([8000.0, 0.0, 0.0, 0.0, np.sqrt(398600.4355070226/8000), 0.0])  # Initial state vector [km, km/s]
 t0 = 0.0  # Initial time in seconds
-tf = 1*24*3600  # Final time in seconds
+tf = 24*3600  # Final time in seconds
 options = orb.options(360,180)  # Example options for visibility calculations
 
 orb.load_kernels()
@@ -39,7 +39,7 @@ for i in range(len(sat.times)):
     if data is not None and data.size > 0:
         indices = np.array([IndexMap[(x, y)] for x, y in zip(data[:,0], data[:,1])])
         SolutionMatrix[i, indices] = data[:,2]
-    if (i+1) % 10 == 0 or i == len(sat.times)-1:
+    if (i) % 10 == 0 or i == len(sat.times)-1:
         print("Completed time index %d / %d" % (i+1, len(sat.times)))
 
 np.save("OUTPUT/SolutionMatrix.npy", SolutionMatrix)

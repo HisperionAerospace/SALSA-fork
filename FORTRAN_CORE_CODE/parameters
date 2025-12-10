@@ -27,10 +27,10 @@ c ==============================================================================
 c COMPUTATIONALLY RELEVANT PARAMETERS
 
 	integer n_alpha
-	parameter (n_alpha = 1001) ! Number of cells + 1 in longitude to represent the Earth
+	parameter (n_alpha = 721) ! Number of cells + 1 in longitude to represent the Earth
       
 	integer n_delta
-	parameter (n_delta = 501) ! Number of cells + 1 in latitutde to represent the Earth
+	parameter (n_delta = 351) ! Number of cells + 1 in latitutde to represent the Earth
       
 	integer n_targets_max
 	parameter (n_targets_max = 10000) ! Maximum number of targets in the sky to be processed
