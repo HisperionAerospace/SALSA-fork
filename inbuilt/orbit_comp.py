@@ -12,12 +12,12 @@ def createInputFilesAtTimeIndex(sat, i):
     orbPosSat = sat.states[0:3, i]
     RASAT, DECSAT = cart2radec(orbPosSat)
     RSAT = np.linalg.norm(orbPosSat)
-    SAT_DATA = np.row_stack((orbPosSat[0],orbPosSat[1],orbPosSat[2], RASAT, DECSAT, RSAT))
+    SAT_DATA = np.vstack((orbPosSat[0],orbPosSat[1],orbPosSat[2], RASAT, DECSAT, RSAT))
     np.savetxt("INPUT/coord_sat.dat", SAT_DATA, fmt='%.16e', delimiter=',')
     PosSun = sat.sun_vector[0:3, i]
     RASUN, DECSUN = cart2radec(PosSun)
     RSUN = np.linalg.norm(PosSun)
-    SUN_DATA = np.row_stack((PosSun[0],PosSun[1],PosSun[2], RASUN, DECSUN, RSUN))
+    SUN_DATA = np.vstack((PosSun[0],PosSun[1],PosSun[2], RASUN, DECSUN, RSUN))
     np.savetxt("INPUT/coord_sun.dat", SUN_DATA, fmt='%.16e', delimiter=',')
 
 def cart2radec(vec):
@@ -127,10 +127,10 @@ class Satellite:
         table = np.column_stack((self.times/60.0, x, y, z)) # time in minutes
         
         # Write with space separator, no headers
-        np.savetxt(filename, table, fmt='%.6e', delimiter=' ')
+        np.savetxt(filename, table, fmt='%.16e', delimiter=' ')
         times_rel = self.times/60.0 - self.times[0]/60.0
         orbitid = 1
         table_minutes = np.column_stack((np.full_like(times_rel, orbitid, dtype=np.int32), times_rel, self.times/60.0))
-        np.savetxt("DATA/minute_table.dat", table_minutes, fmt='%.6e', delimiter=',')
+        np.savetxt("DATA/minute_table.dat", table_minutes, fmt='%.16e', delimiter=',')
 
 
