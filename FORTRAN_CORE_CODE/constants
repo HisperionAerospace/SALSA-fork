@@ -2,10 +2,10 @@ c ==============================================================================
 c PHYSICAL CONSTANTS
 
 	double precision pi
-	parameter (pi = 3.14159d0)
+	parameter (pi = 3.14159265358979d0)
 
 	double precision RAD 
-	parameter (RAD = 57.29578d0)             !1 rad = 57.3 grad
+	parameter (RAD = 57.2957795130823d0)             !1 rad = 57.3 grad
 
 	double precision AU
 	parameter (AU = 149.59787d11)            !AU in cm

@@ -39,7 +39,7 @@ def gen_sunAndMoonFile(sat, filename_sun, filename_moon):
         sun_state = spice.spkezr('SUN', t, 'J2000', 'LT', 'EARTH')
         sun_positions[i, :] = (sun_state[0][0:3])  # Extract position components
         moon_state = spice.spkezr('MOON', t, 'J2000', 'LT', 'EARTH')
-        moon_positions[i, :] = (moon_state[0][0:3]-ref[i][0:3])  # Extract position components
+        moon_positions[i, :] = (moon_state[0][0:3])  # Extract position components
     sat.sun_vector = sun_positions.T
     sat.moon_vector = moon_positions.T
     # Stack into 4 columns: time, x, y, z
